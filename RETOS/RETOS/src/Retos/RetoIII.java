@@ -4,68 +4,50 @@ import java.util.Scanner;
 
 public class RetoIII {
     public static void main(String[] args) {
-        // declaramos las variables
-        int numero, numero1;
-        String manoM = "";
-        String manoU = "";
-        // instanciamos la clase Scanner
+        // declaro las variables e inicializo en cero las que van a almacenar el resultado de una operacion
+        int number;
+        String elec,elecU = "";
+        // instancio la clase Scanner
         Scanner leer = new Scanner(System.in);
-        // hacemos que la maquina elija que quiere sacar
-        numero = (int)(Math.random() * 3);
-        switch (numero) {
-            case 1:
-                manoM = "piedra";
-                // System.out.println("elegiste la piedra");
+        // pido los datos necesarios al usuario, los parceo y los guardo en variables
+        System.out.println("Elije ¿cara o sello?");
+        elec = leer.nextLine();
+        // con este metodo convierto todo lo que el usuario ingreso en minusculas
+        elec.toLowerCase();
+        // le doy un valor a la variable elecU dependiendo del caso seleccionado
+        switch(elec){
+            case "cara":
+                System.out.println("elegiste cara");
+                elecU = "cara";
             break;
-            case 2:
-                manoM = "papel";
-                // System.out.println("elegiste sacar papel");
-            break;
-            case 3:
-                manoM = "tijeras";
-                // System.out.println("elegiste sacar tijeras");
-            break;
-        }
-        // ahora le toca al humano elegir
-        System.out.println("que deseas sacar : \n 1. piedra  2. papel  3. tijeras");
-        numero1 = leer.nextInt();
-        switch (numero1) {
-            case 1:
-                manoU = "piedra";
-                System.out.println("elegiste la piedra");
-            break;
-            case 2:
-                manoU = "papel";
-                System.out.println("elegiste sacar papel");
-            break;
-            case 3:
-                manoU = "tijeras";
-                System.out.println("elegiste sacar tijeras");
+            case "sello":
+                System.out.println("elegiste sello");
+                elecU = "sello";
             break;
         }
 
-        if (manoU.equalsIgnoreCase("piedra") && manoM.equalsIgnoreCase("tijeras")){
-            System.out.println(" el usuario gana");
-        } else if (manoU.equalsIgnoreCase("papel") && manoM.equalsIgnoreCase("piedra")){
-            System.out.println(" el usuario gana");
-        } else if (manoU.equalsIgnoreCase("tijeras") && manoM.equalsIgnoreCase("papel")){
-            System.out.println(" el usuario gana");
-        } else if (manoU.equalsIgnoreCase("papel") && manoM.equalsIgnoreCase("papel")){
-            System.out.println(" ocurrio un empate, nadie gana");
-        } else if (manoU.equalsIgnoreCase("piedra") && manoM.equalsIgnoreCase("piedra")){
-            System.out.println(" ocurrio un empate, nadie gana");
-        } else if (manoU.equalsIgnoreCase("tijeras") && manoM.equalsIgnoreCase("tijeras")){
-            System.out.println(" ocurrio un empate, nadie gana");
-        } else if (manoU.equalsIgnoreCase("piedra") && manoM.equalsIgnoreCase("papel")){
-            System.out.println(" la maquina gana");
-        } else if (manoU.equalsIgnoreCase("tijeras") && manoM.equalsIgnoreCase("piedra")){
-            System.out.println(" la maquina gana");
-        } else if (manoU.equalsIgnoreCase("papel") && manoM.equalsIgnoreCase("tijeras")){
-            System.out.println(" la maquina gana");
+        // mensaje intermedio
+        System.out.println("la moneda esta girando");
+
+        // genero un numero aleatorio entre 0 y 1 con el objeto Math y su metodo random
+        number = (int) (Math.random()*2);
+        switch(number){
+            case 0:
+                elec = "cara";
+                System.out.println("cayo cara");
+            break;
+            case 1:
+                elec = "sello";
+                System.out.println("cayo sello");
+            break;
+        }
+        // comparo si la eleccion del usuario es igual a la de la maquina
+        if (elec == elecU){
+            System.out.println("ganaste");
         } else {
-            System.out.println("Ocurrio un error");
+            System.out.println("perdiste");
         }
-
+        // limpiamos el buffer  
         leer.close();
     }
 }

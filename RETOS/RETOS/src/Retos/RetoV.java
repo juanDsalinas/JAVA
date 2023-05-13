@@ -2,14 +2,17 @@ package Retos;
 import java.util.Scanner;
 public class RetoV {
     public static void main(String[] args) {
-        // String Signo;
+        // declaro las variables e inicializo en cero las que van a almacenar el resultado de una operacion
         int mes,dia;
+        // instanciamos la clase Scanner
         Scanner leer = new Scanner(System.in);
+        // pido los datos necesarios al usuario, los parceo y los guardo en variables
         System.out.println("bienvenido, este programa te indica mediante tu mes y dia de nacimiento que signo del zodiaco eres, aparte de que muestra una breve descripcion de tu signo");
         System.out.println("Indica tu mes de nacimiento siendo 1 - enero y 12 - diciembre");
         mes = leer.nextInt();
         System.out.println("Indica tu dia de nacimiento ");
         dia = leer.nextInt();
+        // voy a mostrar indicar el signo del usuario dependiendo del caso seleccionado y una breve descripcion del mismo
         if(mes == 1){
             if(dia>= 0 && dia<=18){
                 System.out.println("tu signo zodiacal es sagitario");
@@ -103,14 +106,13 @@ public class RetoV {
         } else if (mes == 12) {
             if(dia >= 0 && dia <= 31){
                 System.out.println("tu signo zodiacal es sagitario");
-                System.out.println("Los Sagitario tienen una gran confianza en sí mismos y a menudo son el alma de la fiesta. Casi siempre caen bien por la energía positiva que desprenden y su visión optimista del futuro es contagiosa. Los nacidos bajo este signo forjan amistades nuevas con mucha facilidad y son personas muy sociables en quienes, generalmente, se puede confiar");
-
+                System.out.println("Los Sagitario tienen una gran confianza en sí mismos y a menudo son el alma de la fiesta. Casi siempre caen bien por la energía positiva que desprenden y su visión optimista del futuro es contagiosa. Los nacidos bajo este signo forjan amistades nuevas con mucha facilidad y son personas muy sociables en quienes, generalmente, se puede confiar");   
+            } 
         } else  {
-
+            System.out.println("el dia y/o el mes es invalido");
         }
-       
-        leer.close();
-    }
-    
+    // limpiamos el buffer
+    leer.close();
+        
     }
 }
