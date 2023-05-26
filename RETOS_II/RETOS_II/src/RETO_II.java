@@ -21,7 +21,8 @@ public class RETO_II {
         }
         // mostramos las posiciones para los dos arrays
         for(int i=0; i < competidor.length; i++){
-            System.out.println("the name of the competidor " + i + " is " + competidor[i] + " and her time is " + time[i]);
+            System.out.println("the name of the competidor " + i + " is " + competidor[i] + 
+            " and her time is " + time[i]);
         }
 
         // determinar el ganador organizandolos de mayor a menor
@@ -49,7 +50,7 @@ public class RETO_II {
                 break;
             }
         }
-
+        // limpiamos el buffer
         leer.close();
     }
 }

@@ -67,6 +67,7 @@ public class RETO_III {
             }
 
         }
+        // limpiamos el buffer
         leer.close();
     }
 }

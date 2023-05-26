@@ -9,7 +9,6 @@ public class RETO_V {
         Scanner leer = new Scanner(System.in);
         // declaramos las dos matrices que vamos a utilizar
         int[][] sensation = new int[4][4];
-        int[][] life = new int [4][4]; 
 
         // rellenar la matriz sensation
         sensation[0][0] = 1;
@@ -29,24 +28,6 @@ public class RETO_V {
         sensation[3][2] = 5;
         sensation[3][3] = 4;
 
-        // rellenar la matriz life
-        life[0][0] = 1;
-        life[0][1] = 1;
-        life[0][2] = 1;
-        life[0][3] = 1;
-        life[1][0] = 1;
-        life[1][1] = 1;
-        life[1][2] = 1;
-        life[1][3] = 1;
-        life[2][0] = 1;
-        life[2][1] = 1;
-        life[2][2] = 1;
-        life[2][3] = 1;
-        life[3][0] = 1;
-        life[3][1] = 1;
-        life[3][2] = 1;
-        life[3][3] = 1;
-
         do {
             // preguntamos la primera posicion
             System.out.println("elije las primeras posiciones");
@@ -58,11 +39,8 @@ public class RETO_V {
             for(int filas=0; filas < 4; filas++){
                 for(int columnas=0; columnas < 4; columnas++){
                     if(n == columnas && m == filas){
-                        if(life[columnas][filas] == 1){
                             System.out.println("el numero en esa posicion es " + sensation[columnas][filas]);
-                            cont = sensation[filas][columnas];
-                            sensation[filas][columnas] = cont;
-                        }
+                            cont = sensation[columnas][filas];
                     }
                 }
             }
@@ -78,11 +56,8 @@ public class RETO_V {
             for(int filas=0; filas < 4; filas++){
                 for(int columnas=0; columnas < 4; columnas++){
                     if(n == columnas && m == filas){
-                        if(life[columnas][filas] == 1){
                             System.out.println("el numero en esa posicion es " + sensation[columnas][filas]);
-                            cont1 = sensation[filas][columnas];
-                            sensation[filas][columnas] = cont1;
-                        }
+                            cont1 = sensation[columnas][filas];
                     }
                 }
             }
